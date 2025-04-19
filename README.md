@@ -8,8 +8,8 @@ A privacy-preserving tool that automatically detects and anonymizes faces using 
 
 🎬 **Demo Comparison:**  
 See the real-time face detection and blurring in action below!
-[▶️ Watch the before video (before.gif)](./before.gif)
-[▶️ Watch the after bluring video (demo.gif)](./demo.gif)
+![▶️ Watch the before video (before.gif)](./before.gif)
+![▶️ Watch the after bluring video (demo.gif)](./demo.gif)
 
 
 ---
