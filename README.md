@@ -6,12 +6,13 @@
 
 A privacy-preserving tool that automatically detects and anonymizes faces using computer vision. This project detects and **automatically blurs faces** in images, video files, or live webcam feeds. It's ideal for anonymizing visual data quickly and efficiently using **MediaPipe's face detection** model and **OpenCV**.
 
-🎬 **Demo Comparison:**  
-See the real-time face detection and blurring in action below:
+🎬 **Demo Comparison:**
 
-| Before | After |
-|--------|-------|
-| ![Before](./before.gif) | ![After](./demo.gif) |
+**🔹 Before Blurring:**  
+![Before](./before.gif)
+
+**🔹 After Blurring:**  
+![After](./demo.gif)
 
 
 ---
