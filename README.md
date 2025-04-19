@@ -6,13 +6,9 @@
 
 A privacy-preserving tool that automatically detects and anonymizes faces using computer vision. This project detects and **automatically blurs faces** in images, video files, or live webcam feeds. It's ideal for anonymizing visual data quickly and efficiently using **MediaPipe's face detection** model and **OpenCV**.
 
-🎬 **Demo Comparison:**
-
-**🔹 Before Blurring:**  
-![Before](./before.gif)
-
-**🔹 After Blurring:**  
-![After](./demo.gif)
+| Before | After |
+|--------|-------|
+| ![Before](./before.gif) | ![After](./Demo.gif) |
 
 
 ---
@@ -45,16 +41,16 @@ A privacy-preserving tool that automatically detects and anonymizes faces using 
     ```
 
 ### Usage
-    ``` bash
-    # Live webcam anonymization (press Q to quit)
-    python main.py --mode webcam
+``` bash
+# Live webcam anonymization (press Q to quit)
+python main.py --mode webcam
 
-    # Process an image (saves to output/output.png)
-    python main.py --mode image --filePath input.jpg
+# Process an image (saves to output/output.png)
+python main.py --mode image --filePath input.jpg
 
-    # Process a video (saves to output/output.mp4)
-    python main.py --mode video --filePath input.mp4
-    ```
+# Process a video (saves to output/output.mp4)
+python main.py --mode video --filePath input.mp4
+```
 
 ---
 
@@ -67,16 +63,16 @@ A privacy-preserving tool that automatically detects and anonymizes faces using 
 ---
 
 ## 📁 File Structure
-    ```plaintext
-    .
-    ├── main.py            # Main processing script with all modes
-    ├── output/            # Directory containing processed outputs
-    │   ├── output.png     # Blurred image output
-    │   └── output.mp4     # Blurred video output
-    ├── before.gif         # GIF showing the original unblurred video
-    ├── demo.gif           # GIF showing the anonymized (blurred) video
-    └── README.md          # Project documentation 
-    ```
+```plaintext
+.
+├── main.py            # Main processing script with all modes
+├── output/            # Directory containing processed outputs
+│   ├── output.png     # Blurred image output
+│   └── output.mp4     # Blurred video output
+├── before.gif         # GIF showing the original unblurred video
+├── demo.gif           # GIF showing the anonymized (blurred) video
+└── README.md          # Project documentation 
+```
 
 ---
 
