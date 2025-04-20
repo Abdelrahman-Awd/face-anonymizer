@@ -5,23 +5,27 @@ import argparse
 
 
 def process_img(img, face_detection):
-    H, W, _ = img.shape
-    img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-    out = face_detection.process(img_rgb)
+    results = face_detection.process(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
 
-    if out.detections is not None:
-        for detection in out.detections:
-            bbox = detection.location_data.relative_bounding_box
-            x1, y1, w, h = bbox.xmin, bbox.ymin, bbox.width, bbox.height
+    if results.detections:
+        h_img, w_img = img.shape[:2]
 
-            x1 = int(x1 * W)
-            y1 = int(y1 * H)
-            w = int(w * W)
-            h = int(h * H)
+        for detection in results.detections:
+            bboxC = detection.location_data.relative_bounding_box
+            x1 = int(bboxC.xmin * w_img)
+            y1 = int(bboxC.ymin * h_img)
+            w = int(bboxC.width * w_img)
+            h = int(bboxC.height * h_img)
 
-            # Blur faces
-            img[y1:y1 + h, x1:x1 +
-                w] = cv2.blur(img[y1:y1 + h, x1:x1 + w], (50, 50))
+            # Fix any negative values and stay within bounds
+            x1 = max(0, x1)
+            y1 = max(0, y1)
+            x2 = min(w_img, x1 + w)
+            y2 = min(h_img, y1 + h)
+
+            # Only apply blur if region is valid
+            if y2 > y1 and x2 > x1:
+                img[y1:y2, x1:x2] = cv2.blur(img[y1:y2, x1:x2], (50, 50))
 
     return img
 
